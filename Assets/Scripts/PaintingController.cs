@@ -13,16 +13,15 @@ public class PaintingController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetMouseButtonUp(0))
+        {
+            _trailRenderer.emitting = false;
+        }
+        
         if (Input.GetMouseButtonDown(0))
         {
             _trailRenderer.Clear();
             _trailRenderer.emitting = true;
-            MovePainter();
-        }
-        
-        if (Input.GetMouseButtonUp(0))
-        {
-            _trailRenderer.emitting = false;
         }
         
         MovePainter();
